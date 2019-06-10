@@ -1,0 +1,95 @@
+﻿<Page
+    x:Class="Stirling.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Stirling"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Windows10version1809="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractPresent(Windows.Foundation.UniversalApiContract, 7)"
+    xmlns:Windows10version1803="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractPresent(Windows.Foundation.UniversalApiContract, 6)"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.Resources>
+            <AcrylicBrush x:Key="NavigationViewExpandedPaneBackground"
+                          BackgroundSource="HostBackdrop"
+                          TintColor="Gray"
+                          TintOpacity="0.6"
+                          FallbackColor="Black" />
+        </Grid.Resources>
+
+        <NavigationView Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" 
+                        Windows10version1809:PaneDisplayMode="Left" Windows10version1803:PaneTitle="StirlingLMS">
+            <NavigationView.AutoSuggestBox>
+                <AutoSuggestBox x:Name="NavViewSearchBox" QueryIcon="Find" PlaceholderText="Search for anything" />
+            </NavigationView.AutoSuggestBox>
+            
+            <NavigationView.MenuItems>
+                <NavigationViewItem x:Uid="DashboardNavItem" Content="Dashboard" Tag="dashboard">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xECA5;" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItem x:Uid="AnnouncementsNavItem" Content="Announcements" Tag="announcements">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE789;" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItem x:Uid="ClassesNavItem" Content="Classes" Tag="classes">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE7BE;" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItemSeparator />
+                <NavigationViewItemHeader x:Name="ClassDataHeader" Content="Class Details" />
+
+                <NavigationViewItem x:Uid="ResourcesNavItem" Content="Resources" Tag="resources">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE7C3;" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItem x:Uid="TasksNavItem" Content="Tasks" Tag="tasks">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xEADF;" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItem x:Uid="ResultsNavItem" Content="Results" Tag="results">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE9F9;" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItemSeparator />
+                <NavigationViewItemHeader x:Name="ExtraToolsHeader" Content="Extra Tools" />
+
+                <NavigationViewItem x:Uid="NotesNavItem" Content="Notes" Tag="notes">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE70B;" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItem x:Uid="AtarCalcNavItem" Content="Atar Calculator" Tag="atarcalculator">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xF093;" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+        </NavigationView>
+    </Grid>
+</Page>
